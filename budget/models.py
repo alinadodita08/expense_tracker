@@ -31,7 +31,7 @@ class AcccountEntry(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()
-    category_id = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='account_name_category')
 
     def __str__(self):
         return self.id
@@ -52,5 +52,5 @@ class BudgetBracket(models.Model):
 
 class Category2BudgetBracket(models.Model):
      id = models.AutoField(primary_key=True)
-     category_id = models.ForeignKey(Category,on_delete=models.CASCADE, related_name='category' )
+     category_id = models.ForeignKey(Category,on_delete=models.CASCADE, related_name='budget_bracket_category' )
      budget_bracket_id = models.ForeignKey(BudgetBracket,on_delete=models.CASCADE, related_name='budget_bracket')
