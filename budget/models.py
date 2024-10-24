@@ -15,6 +15,13 @@ class Account(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Category(models.Model):
+     id = models.AutoField(primary_key=True)
+     image_file =  models.ImageField(upload_to='images/', null=True, blank=True)
+     name = models.CharField(max_length=120)
+     is_expense = models.BooleanField()
 
 
 class AcccountEntry(models.Model):
@@ -28,7 +35,8 @@ class AcccountEntry(models.Model):
 
     def __str__(self):
         return self.id
-    
+
+
 class Budget(models.Model):
     id = models.AutoField(primary_key=True)
     total = models.DecimalField(max_digits=10,decimal_places=2 )
@@ -41,13 +49,6 @@ class BudgetBracket(models.Model):
         name = models.CharField(max_length=120)
         total = models.DecimalField(max_digits=10,decimal_places=2 )
 
-
-class Category(models.Model):
-     id = models.AutoField(primary_key=True)
-     image_file =  models.ImageField(upload_to='images/', null=True, blank=True)
-     name = models.CharField(max_length=120)
-     is_expense = models.BooleanField()
-     
 
 class Category2BudgetBracket(models.Model):
      id = models.AutoField(primary_key=True)
