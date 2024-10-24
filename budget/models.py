@@ -24,6 +24,32 @@ class AcccountEntry(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateTimeField(auto_now_add=True)
     comment = models.TextField()
+    category_id = models.Model(Category,on_delete=models.CASCADE, related_name='category')
 
     def __str__(self):
         return self.id
+    
+class Budget(models.Model):
+    id = models.AutoField(primary_key=True)
+    total = models.DecimalField(max_digits=10,decimal_places=2 )
+    month = models.IntegerField()
+
+
+class BudgetBracket(models.Model):
+        id = models.AutoField(primary_key=True)
+        budget_id = models.ForeignKey(Budget,on_delete=models.CASCADE, related_name='budget')
+        name = models.CharField(max_length=120)
+        total = models.DecimalField(max_digits=10,decimal_places=2 )
+
+
+class Category(models.Model):
+     id = models.AutoField(primary_key=True)
+     image_file =  models.ImageField(upload_to='images/', null=True, blank=True)
+     name = models.CharField(max_length=120)
+     is_expense = models.BooleanField()
+     
+
+class Category2BudgetBracket(models.Model):
+     id = models.AutoField(primary_key=True)
+     category_id = models.ForeignKey(Category,on_delete=models.CASCADE, related_name='category' )
+     budget_bracket_id = models.ForeignKey(BudgetBracket,on_delete=models.CASCADE, related_name='budget_bracket')
