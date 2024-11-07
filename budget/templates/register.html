@@ -30,7 +30,13 @@
     <div class="d-flex justify-content-center align-items-center vh-100">
         <div class="form-container">
             <h2 class="text-center">Create Account</h2>
-            <form action="/register" method="POST">
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form action="/register/" method="POST">
+                {% csrf_token %}
                 <!-- Login Field -->
                 <div class="mb-3">
                     <label for="login" class="form-label">Username</label>
