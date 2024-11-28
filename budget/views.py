@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 
 def login(request):
     return render(request, 'login.html')
@@ -33,6 +33,12 @@ def register(request):
             return render(request, 'register.html', {'error': 'Password should have at least 3 numbers.'})
         if password_special_char(password) < 1:
             return render(request, 'register.html', {'error': 'Password should have at least 1 special character.'})
-            
-
+        email = request.POST['email']
+        username = request.POST['login']
+        user = User.objects.create_user(username=username,password=password,email=email)
+        user.save()
+        return redirect("login")
     return render(request, 'register.html')
+
+def home(request):
+    return "Home"

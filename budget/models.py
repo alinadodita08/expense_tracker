@@ -54,3 +54,4 @@ class Category2BudgetBracket(models.Model):
      id = models.AutoField(primary_key=True)
      category_id = models.ForeignKey(Category,on_delete=models.CASCADE, related_name='budget_bracket_category' )
      budget_bracket_id = models.ForeignKey(BudgetBracket,on_delete=models.CASCADE, related_name='budget_bracket')
+

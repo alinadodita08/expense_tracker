@@ -19,7 +19,7 @@ from django.urls import path
 from budget import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login/', views.login),
-    path('register/', views.register)
+    path('admin/', admin.site.urls, name='admin'),
+    path('login/', views.login,name='login'),
+    path('register/', views.register,name='register')
 ]
