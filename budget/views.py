@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from .helpers import password_num, password_special_char
 # PEP8 - Python Enhancement Proposal 8 style guide
 
 def login(request):
@@ -16,23 +17,6 @@ def login(request):
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
 
-
-def password_num(password):
-    numbers = '1234567890'
-    count = 0
-    for character in password:
-        if character in numbers:
-            count += 1
-    return count
-
-
-def password_special_char(password):
-    special_characters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-    count = 0
-    for character in password:
-        if character in special_characters:
-            count += 1
-    return count
 
 # GET, POST
 def register(request):
