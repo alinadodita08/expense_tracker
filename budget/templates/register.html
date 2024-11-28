@@ -1,33 +1,9 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block head %}
-<style>
-    body {
-        background-color: #5F9EA0;
-        height: 100vh;
-    }
-
-    .form-container {
-        width: 50%;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-container h2 {
-        margin-bottom: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    .btn-primary {
-        width: 100%;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
 {% endblock %}
 {% block content %}
 
