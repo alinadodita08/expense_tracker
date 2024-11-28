@@ -1,8 +1,21 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+# PEP8 - Python Enhancement Proposal 8 style guide
 
 def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = User.objects.get(username=username)
+        if user.check_password(password):
+            return redirect("home")
+        else:
+            return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
+
 
 def password_num(password):
     numbers = '1234567890'
@@ -11,7 +24,8 @@ def password_num(password):
         if character in numbers:
             count += 1
     return count
-        
+
+
 def password_special_char(password):
     special_characters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
     count = 0
@@ -40,5 +54,6 @@ def register(request):
         return redirect("login")
     return render(request, 'register.html')
 
+@login_required
 def home(request):
-    return "Home"
+    return HttpResponse("Home")
