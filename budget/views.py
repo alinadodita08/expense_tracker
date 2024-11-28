@@ -49,9 +49,8 @@ def register(request):
             return render(request, 'register.html', {'error': 'Password should have at least 1 special character.'})
         email = request.POST['email']
         username = request.POST['login']
-        user = User.objects.get(username=username)
-        if user is not None:
-            return(request,'register.html', {'error': "Username already exists, please log in"})
+        if User.objects.filter(username=username).exists():
+            return render(request,'register.html', {'error': "Username already exists, please log in"})
         user = User.objects.create_user(username=username,password=password,email=email)
         user.save()
         return redirect("login")
