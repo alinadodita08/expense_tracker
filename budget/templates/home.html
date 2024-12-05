@@ -9,65 +9,19 @@
 {% block content %}
     <!-- Main Content -->
     <div class="container my-5">
-        <!-- Add Expense Form -->
-        <div class="expense-form">
-            <h3 class="text-center">Add New Expense</h3>
-            <form>
-                <div class="mb-3">
-                    <label for="expenseTitle" class="form-label">Expense Title</label>
-                    <input type="text" class="form-control" id="expenseTitle" required>
-                </div>
-                <div class="mb-3">
-                    <label for="expenseAmount" class="form-label">Amount</label>
-                    <input type="number" class="form-control" id="expenseAmount" required>
-                </div>
-                <div class="mb-3">
-                    <label for="expenseDate" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="expenseDate" required>
-                </div>
-                <div class="mb-3">
-                    <label for="expenseCategory" class="form-label">Category</label>
-                    <select class="form-select" id="expenseCategory">
-                        <option selected>Choose Category</option>
-                        <option value="Food">Groceries</option>
-                        <option value="Transport">Transport</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Bills">Bills</option>
-                        <option value="Shopping">Shopping</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Add Expense</button>
-            </form>
-        </div>
-
         <!-- Expense Summary -->
         <div class="expense-summary">
-            <h3 class="text-center">Expense Summary</h3>
+            <h3 class="text-center">Accounts</h3>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card expense-card">
                         <div class="card-body">
-                            <h5 class="card-title">Total Expenses</h5>
+                            <h5 class="card-title">Cash Account</h5>
                             <p class="card-text">$500</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card expense-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Groceries</h5>
-                            <p class="card-text">$150</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card expense-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Total Transport</h5>
-                            <p class="card-text">$100</p>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-primary">+</button>
             </div>
         </div>
     </div>

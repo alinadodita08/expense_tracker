@@ -1,0 +1,30 @@
+<!-- Add Expense Form -->
+<div class="expense-form">
+    <h3 class="text-center">Add New Expense</h3>
+    <form>
+        <div class="mb-3">
+            <label for="expenseTitle" class="form-label">Expense Title</label>
+            <input type="text" class="form-control" id="expenseTitle" required>
+        </div>
+        <div class="mb-3">
+            <label for="expenseAmount" class="form-label">Amount</label>
+            <input type="number" class="form-control" id="expenseAmount" required>
+        </div>
+        <div class="mb-3">
+            <label for="expenseDate" class="form-label">Date</label>
+            <input type="date" class="form-control" id="expenseDate" required>
+        </div>
+        <div class="mb-3">
+            <label for="expenseCategory" class="form-label">Category</label>
+            <select class="form-select" id="expenseCategory">
+                <option selected>Choose Category</option>
+                <option value="Food">Groceries</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Bills">Bills</option>
+                <option value="Shopping">Shopping</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Add Expense</button>
+    </form>
+</div>
