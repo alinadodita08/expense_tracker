@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .expense-card {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .expense-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .expense-summary {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Expense Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Add Expense Form -->
+        <div class="expense-form">
+            <h3 class="text-center">Add New Expense</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="expenseTitle" class="form-label">Expense Title</label>
+                    <input type="text" class="form-control" id="expenseTitle" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expenseAmount" class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="expenseAmount" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expenseDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="expenseDate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expenseCategory" class="form-label">Category</label>
+                    <select class="form-select" id="expenseCategory">
+                        <option selected>Choose Category</option>
+                        <option value="Food">Groceries</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Shopping">Shopping</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Add Expense</button>
+            </form>
+        </div>
+
+        <!-- Expense Summary -->
+        <div class="expense-summary">
+            <h3 class="text-center">Expense Summary</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card expense-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Expenses</h5>
+                            <p class="card-text">$500</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card expense-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Groceries</h5>
+                            <p class="card-text">$150</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card expense-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Transport</h5>
+                            <p class="card-text">$100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
