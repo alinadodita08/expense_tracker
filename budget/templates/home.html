@@ -7,22 +7,24 @@
 {% endblock %}
 
 {% block content %}
-    <!-- Main Content -->
-    <div class="container my-5">
-        <!-- Expense Summary -->
-        <div class="expense-summary">
-            <h3 class="text-center">Accounts</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card expense-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Cash Account</h5>
-                            <p class="card-text">$500</p>
-                        </div>
+<!-- Main Content -->
+<div class="container my-5">
+    <!-- Expense Summary -->
+    <div class="expense-summary">
+        <h3 class="text-center">Accounts</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card expense-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Cash Account</h5>
+                        <p class="card-text">$500</p>
                     </div>
                 </div>
-                <button class="btn btn-primary">+</button>
+            </div>
+            <div class="col-md-1 d-flex align-items-center justify-content-center" style="padding-bottom: 20px;">
+                <button class="btn btn-primary" style="font-size: 15px;font-weight: bold;border-radius: 20px;">+</button>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
