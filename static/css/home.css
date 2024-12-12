@@ -2,6 +2,7 @@
     background-color: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    cursor: pointer; /* Add this line */
 }
 .expense-form {
     max-width: 600px;
@@ -44,3 +45,12 @@
 .main-content {
     padding: 20px;
 }
+
+.expense-card .bi-trash {
+    display: none;
+}
+.expense-card:hover .bi-trash {
+    display: block;
+    cursor: pointer;
+}
+

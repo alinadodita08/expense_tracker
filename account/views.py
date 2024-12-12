@@ -13,8 +13,11 @@ def create_account(request):
     return redirect('home')
 
 
-def delete_account(request):
-    pass
+def delete_account(request, account_id):
+    account = Account.objects.get(id=account_id)
+    account.delete()
+    accounts = Account.objects.all()
+    return render(request, 'partials/accounts.html', {'accounts': accounts})
 
 
 def update_account(request):

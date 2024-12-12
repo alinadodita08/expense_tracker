@@ -25,6 +25,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login'),
     path('register/', views.register, name='register'),
     path('create_account/', account_views.create_account, name='create_account'),
+    path('delete_account/<int:account_id>/', account_views.delete_account, name='delete_account'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', views.home, name='home')
 ]
