@@ -39,7 +39,29 @@
         <div class="modal-body">
             <label for="basic-url" class="form-label">Name</label>
             <div class="input-group mb-3">
-                <input class="form-control" type="text" placeholder="Name">
+                <input class="form-control" type="text" placeholder="Name" name="name">
+            </div>
+            <label for="basic-url" class="form-label">Balance</label>
+            <div class="input-group mb-3">
+                <input class="form-control" type="number" placeholder="Balance" name="balance">
+            </div>
+            <label for="basic-url" class="form-label">Currency</label>
+            <div class="input-group mb-3">
+                <select class="form-select" id="currencySelect" aria-label="Select a currency" name="currency">
+                    <option value="USD">USD - United States Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British Pound</option>
+                    <option value="INR">INR - Indian Rupee</option>
+                    <option value="AUD">AUD - Australian Dollar</option>
+                    <option value="CAD">CAD - Canadian Dollar</option>
+                    <option value="JPY">JPY - Japanese Yen</option>
+                    <option value="CNY">CNY - Chinese Yuan</option>
+                    <option value="MXN">MXN - Mexican Peso</option>
+                    <option value="BRL">BRL - Brazilian Real</option>
+                    <option value="RUB">RUB - Russian Ruble</option>
+                    <option value="KZT">KZT - Kazakhstani tenge</option>
+                    <option value="MDL">MDL - Moldovan Lei</option>
+                  </select>
             </div>
         </div>
         <div class="modal-footer">
