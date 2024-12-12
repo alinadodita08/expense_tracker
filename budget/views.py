@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+
+from account.models import Account
 from .helpers import password_num, password_special_char
 # PEP8 - Python Enhancement Proposal 8 style guide
 
@@ -43,4 +45,5 @@ def register(request):
 
 @login_required
 def home(request):
-    return render(request, 'home.html')
+    accounts = Account.objects.all()
+    return render(request, 'home.html', {'accounts': accounts})

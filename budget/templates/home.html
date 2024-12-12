@@ -13,14 +13,16 @@
     <div class="expense-summary">
         <h3 class="text-center">Accounts</h3>
         <div class="row">
+            {% for account in accounts %}
             <div class="col-md-4">
                 <div class="card expense-card">
                     <div class="card-body">
-                        <h5 class="card-title">Cash Account</h5>
-                        <p class="card-text">$500</p>
+                        <h5 class="card-title">{{account.name}}</h5>
+                        <p class="card-text">{{account.balance}} {{account.currency}}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
             <div class="col-md-1 d-flex align-items-center justify-content-center" style="padding-bottom: 20px;">
                 <button class="btn btn-primary" style="font-size: 15px;font-weight: bold;border-radius: 20px;"
                     data-bs-toggle="modal" data-bs-target="#add-account">+</button>
@@ -30,45 +32,48 @@
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="add-account">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Add account</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </button>
-        </div>
-        <div class="modal-body">
-            <label for="basic-url" class="form-label">Name</label>
-            <div class="input-group mb-3">
-                <input class="form-control" type="text" placeholder="Name" name="name">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </button>
             </div>
-            <label for="basic-url" class="form-label">Balance</label>
-            <div class="input-group mb-3">
-                <input class="form-control" type="number" placeholder="Balance" name="balance">
-            </div>
-            <label for="basic-url" class="form-label">Currency</label>
-            <div class="input-group mb-3">
-                <select class="form-select" id="currencySelect" aria-label="Select a currency" name="currency">
-                    <option value="USD">USD - United States Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="GBP">GBP - British Pound</option>
-                    <option value="INR">INR - Indian Rupee</option>
-                    <option value="AUD">AUD - Australian Dollar</option>
-                    <option value="CAD">CAD - Canadian Dollar</option>
-                    <option value="JPY">JPY - Japanese Yen</option>
-                    <option value="CNY">CNY - Chinese Yuan</option>
-                    <option value="MXN">MXN - Mexican Peso</option>
-                    <option value="BRL">BRL - Brazilian Real</option>
-                    <option value="RUB">RUB - Russian Ruble</option>
-                    <option value="KZT">KZT - Kazakhstani tenge</option>
-                    <option value="MDL">MDL - Moldovan Lei</option>
-                  </select>
-            </div>
+            <form action="/create_account/" method="post">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <label for="basic-url" class="form-label">Name</label>
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="text" placeholder="Name" name="name">
+                    </div>
+                    <label for="basic-url" class="form-label">Balance</label>
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" placeholder="Balance" name="balance">
+                    </div>
+                    <label for="basic-url" class="form-label">Currency</label>
+                    <div class="input-group mb-3">
+                        <select class="form-select" id="currencySelect" aria-label="Select a currency" name="currency">
+                            <option value="USD">USD - United States Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="MXN">MXN - Mexican Peso</option>
+                            <option value="BRL">BRL - Brazilian Real</option>
+                            <option value="RUB">RUB - Russian Ruble</option>
+                            <option value="KZT">KZT - Kazakhstani tenge</option>
+                            <option value="MDL">MDL - Moldovan Lei</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 {% endblock %}
