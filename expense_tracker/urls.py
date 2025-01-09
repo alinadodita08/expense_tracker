@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path 
 from budget import views
 from account import views as account_views
+from expenses import views as expenses_views
 
 urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
@@ -29,5 +30,6 @@ urlpatterns = [
     path('edit_account_data/<int:account_id>/', account_views.edit_account_data, name='edit_account_data'),
     path('edit_account/', account_views.edit_account, name='edit_account'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('', views.home, name='home')
+    path('', views.home, name='home'),
+    path('expenses/', expenses_views.index, name='expenses')
 ]
