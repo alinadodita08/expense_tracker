@@ -1,0 +1,27 @@
+<input type="hidden" placeholder="Name" name="id" value="{{account.id}}">
+<label for="basic-url" class="form-label">Name</label>
+<div class="input-group mb-3">
+    <input class="form-control" type="text" placeholder="Name" name="name" value="{{account.name}}">
+</div>
+<label for="basic-url" class="form-label">Balance</label>
+<div class="input-group mb-3">
+    <input class="form-control" type="number" placeholder="Balance" name="balance" value="{{account.balance}}">
+</div>
+<label for="basic-url" class="form-label">Currency</label>
+<div class="input-group mb-3">
+    <select class="form-select" id="currencySelect" aria-label="Select a currency" name="currency">
+        <option value="USD" {% if account.currency == 'USD' %}selected{% endif %}>USD - United States Dollar</option>
+        <option value="EUR" {% if account.currency == 'EUR' %}selected{% endif %}>EUR - Euro</option>
+        <option value="GBP" {% if account.currency == 'GBP' %}selected{% endif %}>GBP - British Pound</option>
+        <option value="INR" {% if account.currency == 'INR' %}selected{% endif %}>INR - Indian Rupee</option>
+        <option value="AUD" {% if account.currency == 'AUD' %}selected{% endif %}>AUD - Australian Dollar</option>
+        <option value="CAD" {% if account.currency == 'CAD' %}selected{% endif %}>CAD - Canadian Dollar</option>
+        <option value="JPY" {% if account.currency == 'JPY' %}selected{% endif %}>JPY - Japanese Yen</option>
+        <option value="CNY" {% if account.currency == 'CNY' %}selected{% endif %}>CNY - Chinese Yuan</option>
+        <option value="MXN" {% if account.currency == 'MXN' %}selected{% endif %}>MXN - Mexican Peso</option>
+        <option value="BRL" {% if account.currency == 'BRL' %}selected{% endif %}>BRL - Brazilian Real</option>
+        <option value="RUB" {% if account.currency == 'RUB' %}selected{% endif %}>RUB - Russian Ruble</option>
+        <option value="KZT" {% if account.currency == 'KZT' %}selected{% endif %}>KZT - Kazakhstani tenge</option>
+        <option value="MDL" {% if account.currency == 'MDL' %}selected{% endif %}>MDL - Moldovan Lei</option>
+    </select>
+</div>

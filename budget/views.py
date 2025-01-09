@@ -47,3 +47,5 @@ def register(request):
 def home(request):
     accounts = Account.objects.all()
     return render(request, 'home.html', {'accounts': accounts})
+
+

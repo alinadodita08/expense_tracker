@@ -26,6 +26,8 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('create_account/', account_views.create_account, name='create_account'),
     path('delete_account/<int:account_id>/', account_views.delete_account, name='delete_account'),
+    path('edit_account_data/<int:account_id>/', account_views.edit_account_data, name='edit_account_data'),
+    path('edit_account/', account_views.edit_account, name='edit_account'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', views.home, name='home')
 ]
