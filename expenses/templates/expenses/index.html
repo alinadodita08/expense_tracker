@@ -49,26 +49,49 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="addExpenseForm">
+                    <form id="addExpenseForm" method="post" action="/addexpense/">
+                        {% csrf_token %}
                         <div class="mb-3">
                             <label for="expenseDate" class="form-label">Date</label>
-                            <input type="date" class="form-control" id="expenseDate" required>
+                            <input type="date" class="form-control" id="expenseDate" name="date" required>
                         </div>
                         <div class="mb-3">
-                            <label for="expenseCategory" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="expenseCategory" required>
+                            <label for="basic-url" class="form-label">Currency</label>
+                            <select class="form-select" id="currencySelect" aria-label="Select a currency" name="currency">
+                                <option value="USD">USD - United States Dollar</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="INR">INR - Indian Rupee</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                                <option value="MXN">MXN - Mexican Peso</option>
+                                <option value="BRL">BRL - Brazilian Real</option>
+                                <option value="RUB">RUB - Russian Ruble</option>
+                                <option value="KZT">KZT - Kazakhstani tenge</option>
+                                <option value="MDL">MDL - Moldovan Lei</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="expenseAmount" class="form-label">Amount</label>
-                            <input type="number" class="form-control" id="expenseAmount" required>
+                            <input type="number" class="form-control" id="expenseAmount" name="amount" required>
                         </div>
                         <div class="mb-3">
-                            <label for="expenseCurrency" class="form-label">Currency</label>
-                            <input type="text" class="form-control" id="expenseCurrency" required>
+                            <label for="expenseCategory" class="form-label">Category</label>
+                            <!-- Pre-select the current category -->
+                            <select class="form-select" id="expenseCategory" name="category">
+                                <option value="Food" selected>Groceries</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Bills">Bills</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="expenseComment" class="form-label">Comment</label>
-                            <textarea class="form-control" id="expenseComment" rows="3"></textarea>
+                            <textarea class="form-control" id="expenseComment" rows="3" name="comment"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Add</button>
                     </form>

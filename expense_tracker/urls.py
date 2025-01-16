@@ -31,5 +31,7 @@ urlpatterns = [
     path('edit_account/', account_views.edit_account, name='edit_account'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('', views.home, name='home'),
-    path('expenses/', expenses_views.index, name='expenses')
+    path('expenses/', expenses_views.index, name='expenses'),
+    path('addexpense/', expenses_views.addexpense, name='addexpense')
+
 ]
