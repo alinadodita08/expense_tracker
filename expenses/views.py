@@ -23,3 +23,9 @@ def add_expense(request):
     return redirect('expenses')
 
 
+def delete_expense(request, id):
+    expense = AcccountEntry.objects.get(id=id)
+    expense.delete()
+    accountentries = AcccountEntry.objects.all()
+    return render(request, 'expenses/delete.html', {'accountentries': accountentries})
+

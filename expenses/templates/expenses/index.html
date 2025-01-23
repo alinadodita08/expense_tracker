@@ -35,7 +35,7 @@
                         <td>{{accountentry.amount}}</td>
                         <td>{{accountentry.currency}}</td>
                         <td>{{accountentry.comment}}</td>
-                        <td><i hx-delete="/expense/delete/{{accountentry.id}}/"
+                        <td><i hx-get="/expenses/delete/{{accountentry.id}}/"
                             hx-confirm="Are you sure you want to delete this expense?" hx-target="#expensesTableBody" hx-swap="innerHTML"
                             class="bi bi-trash"
                             style="font-size: 18px;"></i></td>
