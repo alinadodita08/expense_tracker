@@ -18,30 +18,6 @@
     height: 100vh;
 }
 
-.sidebar {
-    background-color: #343a40;
-    color: white;
-    padding: 15px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 15px 0;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
-
 .main-content {
     padding: 20px;
 }

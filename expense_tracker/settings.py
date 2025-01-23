@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = '/login/' 
+LOGIN_URL = '/user/login/' 
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'budget',
     'account',
     'expenses',
+    'user'
 ]
 
 MIDDLEWARE = [
