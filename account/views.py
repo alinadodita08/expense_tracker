@@ -21,7 +21,7 @@ def delete_account(request, account_id):
     return render(request, 'partials/accounts.html', {'accounts': accounts})
 
 
-def edit_account_data(request, account_id):
+def details(request, account_id):
     account = Account.objects.get(id=account_id)
     return render(request, 'partials/edit.html', {'account': account})
 

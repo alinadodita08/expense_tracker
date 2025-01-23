@@ -9,15 +9,6 @@
     <div class="container my-5">
         <h1 class="text-center mb-4">Expenses</h1>
         
-         
-    <!-- Delete Expense  -->
-    <div class="d-flex justify-content-between mb-3"></div>
-        <i hx-delete="/delete_expense/{{accountentry}}/"
-        hx-confirm="Are you sure you want to delete this expense?" hx-target="#expenses" hx-swap="innerHTML"
-        class="bi bi-trash"
-        style="font-size: 18px;"></i>
-    </div>
-
         <!-- Add Expense Button -->
         <div class="d-flex justify-content-between mb-3">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addExpenseModal">Add Expense</button>
@@ -33,6 +24,7 @@
                         <th>Amount</th>
                         <th>Currency</th>
                         <th>Comment</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="expensesTableBody">
@@ -43,6 +35,10 @@
                         <td>{{accountentry.amount}}</td>
                         <td>{{accountentry.currency}}</td>
                         <td>{{accountentry.comment}}</td>
+                        <td><i hx-delete="/expense/delete/{{accountentry.id}}/"
+                            hx-confirm="Are you sure you want to delete this expense?" hx-target="#expensesTableBody" hx-swap="innerHTML"
+                            class="bi bi-trash"
+                            style="font-size: 18px;"></i></td>
                     </tr>
                     {%endfor%}
                 </tbody>
@@ -59,7 +55,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="addExpenseForm" method="post" action="/addexpense/">
+                    <form id="addExpenseForm" method="post" action="/expenses/add/">
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="expenseDate" class="form-label">Date</label>

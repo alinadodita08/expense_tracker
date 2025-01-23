@@ -7,11 +7,10 @@ from expenses.models import AcccountEntry
 @login_required
 def index(request):
     accountentries = AcccountEntry.objects.all()
-    return render(request, 'expenses/index.html',{"accountentries": accountentries})
+    return render(request, 'expenses/index.html', {'accountentries': accountentries})
 
 
-
-def addexpense(request):
+def add_expense(request):
     data = request.POST
     account = Account.objects.first()
     expense = AcccountEntry()
@@ -24,8 +23,3 @@ def addexpense(request):
     return redirect('expenses')
 
 
-def delete_expense(request, account_id):
-    account = Account.objects.get(id= expense.debit_account_id)
-    account.delete()
-    accounts = Account.objects.all()
-    return render(request, 'partials/accounts.html', {'accountentries': accountentries})
